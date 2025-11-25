@@ -2,6 +2,10 @@
 genai
 .env
 mlruns
+VectorDB_Chroma
+agenticai
+chroma.sqlite3
+Chinook.db
 
 
 

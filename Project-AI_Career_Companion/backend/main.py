@@ -9,7 +9,8 @@ from models.schemas import (
     SkillGapRequest, CareerPlanRequest,
     ReviewRequest, MentorRequest
 )
-from services import vertex_ai_service, mlflow_service, cloud_monitoring_service
+from services import mlflow_service
+from services import cloud_monitoring as cloud_monitoring_service
 from utils.memory import session_memory
 from utils.logger_config import get_logger, RequestLogger
 
