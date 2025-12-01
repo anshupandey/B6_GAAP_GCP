@@ -52,8 +52,11 @@ Internet → Cloud Load Balancer → Cloud Run → Vertex AI (Gemini)
 cd ai-career-companion-gcp
 
 # Set your project ID
-export PROJECT_ID="your-unique-project-id"
-export REGION="us-central1"
+PROJECT_ID="bdc-trainings"
+REGION="us-central1"
+REPOSITORY_NAME=aiccrepo
+REGION=us-central1
+SERVICE_ACCOUNT_NAME=aiccsm
 
 # Authenticate with GCP
 gcloud auth login
@@ -118,7 +121,7 @@ First, obtain your Gemini API key from [Google AI Studio](https://makersuite.goo
 
 ```bash
 # Store Gemini API key
-echo -n "YOUR_ACTUAL_GEMINI_API_KEY" | gcloud secrets create gemini-api-key \
+echo -n "AIzaSyBKu5TKbdl4zaVk9ux9MbOLr_3QoNEUp9Y" | gcloud secrets create gemini-api-key \
     --data-file=- \
     --project=$PROJECT_ID
 
