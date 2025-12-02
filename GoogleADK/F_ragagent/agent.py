@@ -12,7 +12,7 @@ import os
 embedding_model_name = "models/gemini-embedding-001"
 
 # Data ingestion pipeline
-file = "/home/zadmin/Desktop/test/GAAI-B5-GCP/datasets/SalesforceFinancial.pdf"
+file = "/home/zadmin/Desktop/B6_GAAP_GCP/datasets/MorningStar/CategoryDefinitionsIndiaV3.pdf"
 
 reader = PdfReader(file)
 raw_text = "\n".join([page.extract_text() for page in reader.pages if page.extract_text()])
@@ -28,15 +28,15 @@ import sys
 sys.path.append("/home/zadmin/Desktop/test/GAAI-B5-GCP/custom_modules")
 
 
-from customchunking import create_chunk
-# def create_chunk(text,chunk_size=1000,overlap=200):
-#     chunk = []
-#     start = 0
-#     while start< len(text):
-#         end = start + chunk_size
-#         chunk.append(Document(page_content=text[start:end]))
-#         start = start + chunk_size - overlap
-#     return chunk
+#from customchunking import create_chunk
+def create_chunk(text,chunk_size=1000,overlap=200):
+    chunk = []
+    start = 0
+    while start< len(text):
+        end = start + chunk_size
+        chunk.append(Document(page_content=text[start:end]))
+        start = start + chunk_size - overlap
+    return chunk
 
 chunk = create_chunk(raw_text)
 
